@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: docker build -t arturshved/multi-client ./client
+      - run: docker build -t arturshved0202/multi-client ./client
       - run: docker build -t arturshved/multi-nginx ./nginx
       - run: docker build -t arturshved/multi-server ./server
       - run: docker build -t arturshved/multi-worker ./worker
