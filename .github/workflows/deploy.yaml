@@ -10,16 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker build -t arturshved0202/multi-client ./client
-      - run: docker build -t arturshved/multi-nginx ./nginx
-      - run: docker build -t arturshved/multi-server ./server
-      - run: docker build -t arturshved/multi-worker ./worker
-      - run: docker build -t arturshved/react-test -f ./client/Dockerfile.dev ./client
+      - run: docker build -t arturshved0202/multi-nginx ./nginx
+      - run: docker build -t arturshved0202/multi-server ./server
+      - run: docker build -t arturshved0202/multi-worker ./worker
+      - run: docker build -t arturshved0202/react-test -f ./client/Dockerfile.dev ./client
       - run: docker run -e CI=true arturshved/react-test npm test
 
       - name: Login to DockerHub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_ID }}" --password-stdin
 
       - run: docker push arturshved0202/multi-client
-      - run: docker push arturshved/multi-nginx
-      - run: docker push arturshved/multi-server
-      - run: docker push arturshved/multi-worker
+      - run: docker push arturshved0202/multi-nginx
+      - run: docker push arturshved0202/multi-server
+      - run: docker push arturshved0202/multi-worker
