@@ -19,7 +19,7 @@ jobs:
       - name: Login to DockerHub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_ID }}" --password-stdin
 
-      - run: docker push arturshved/multi-client
+      - run: docker push arturshved0202/multi-client
       - run: docker push arturshved/multi-nginx
       - run: docker push arturshved/multi-server
       - run: docker push arturshved/multi-worker
